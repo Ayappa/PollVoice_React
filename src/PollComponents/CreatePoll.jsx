@@ -9,7 +9,7 @@ const CreatePoll = () => {
 	// eslint-disable-next-line
 	const [cookies, setCookie] = useCookies("");
 	const history = useHistory();
-    const [loader, setloader] = useState(false);
+	const [loader, setloader] = useState(false);
 
 	useEffect(() => {
 		pollContext.createTextFunction(true);
@@ -20,7 +20,7 @@ const CreatePoll = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setloader(true)
+		setloader(true);
 		//console.log(pollState);
 		pollContext
 			.createPoll(pollState, cookies.token)
@@ -32,7 +32,7 @@ const CreatePoll = () => {
 				} else {
 					history.push("/my_polls");
 				}
-				setloader(false)
+				setloader(false);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -168,7 +168,12 @@ const CreatePoll = () => {
 					</div>
 				</div>
 				<div className='form-group col-md-12'>
-					<button disabled={loader} type='submit' className='btn btn-primary'>
+					<button
+						disabled={loader}
+						type='submit'
+						className='btn btn-primary'
+						style={{ paddingBottom: "10px" }}
+					>
 						<h4>Create Poll</h4>
 					</button>
 				</div>
