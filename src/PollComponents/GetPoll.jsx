@@ -17,7 +17,7 @@ const GetPoll = (props) => {
 	useEffect(() => {
         setloader(true)
         pollContext.createTextFunction(true);
-		if (cookies.token === "") {
+		if (cookies.token === "" && cookies.token === "") {
 			history.push("/login");
 		}
 

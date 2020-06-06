@@ -167,7 +167,8 @@ const Poll = (poll) => {
 							<p>
 								share the link with friends :
 								<Link to={`/postQuestion/${poll.poll.pid}/getOne`}>
-									https://pollvoicefrontend.herokuapp.com/{poll.poll.pid}/getOne
+									https://pollvoicefrontend.herokuapp.com/postQuestion/
+									{poll.poll.pid}/getOne
 								</Link>
 							</p>
 						</div>
