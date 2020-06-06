@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 const GetPoll = (props) => {
 	const pollContext = useContext(PollContext);
 	// eslint-disable-next-line
-	const [cookies, setCookie] = useCookies("");
+	const [cookies, setCookie] = useCookies(['token']);
 	const history = useHistory();
 	var [poll, setPoll] = useState("");
 	var [alert, setAlert] = useState("");
@@ -19,7 +19,7 @@ const GetPoll = (props) => {
         console.log("get");
 		console.log(cookies);
 		pollContext.createTextFunction(true);
-		if (cookies.token === "") {
+		if (cookies.token === null ||  cookies.token === "") {
             setloader(false);
             history.push("/login");
             
