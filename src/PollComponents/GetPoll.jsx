@@ -20,6 +20,7 @@ const GetPoll = (props) => {
 		console.log(cookies);
 		pollContext.createTextFunction(true);
 		if (cookies.token === null ||  cookies.token === "") {
+            console.log("ifget");
             setloader(false);
             history.push("/login");
             
@@ -27,6 +28,8 @@ const GetPoll = (props) => {
 			pollContext
 				.getOnePoll(cookies.token, props.match.params.id)
 				.then((res) => {
+                    console.log("elseget");
+                    console.log(res)
 					if (res.data === "") {
 						setAlert("invalid");
 						// eslint-disable-next-line
