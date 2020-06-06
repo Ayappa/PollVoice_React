@@ -20,7 +20,7 @@ const CreatePoll = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setloader(false)
+		setloader(true)
 		//console.log(pollState);
 		pollContext
 			.createPoll(pollState, cookies.token)
@@ -32,7 +32,7 @@ const CreatePoll = () => {
 				} else {
 					history.push("/my_polls");
 				}
-				setloader(true)
+				setloader(false)
 			})
 			.catch((err) => {
 				console.log(err);

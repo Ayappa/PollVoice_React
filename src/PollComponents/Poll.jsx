@@ -14,7 +14,7 @@ const Poll = (poll) => {
 	const greenSubmit = () => {
 		pollContext.AnswerPoll(cookies.token, 1, poll.poll.pid).then((res) => {
 			update(res.data);
-		});
+		}).catch(err=>{console.log(err)});
 	};
 	const redSubmit = () => {
 		pollContext.AnswerPoll(cookies.token, -1, poll.poll.pid).then((res) => {
