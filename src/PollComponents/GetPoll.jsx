@@ -17,7 +17,8 @@ const GetPoll = (props) => {
 	useEffect(() => {
         setloader(true);
         console.log("get");
-		console.log(cookies);
+        console.log(cookies);
+        console.log(props);
 		pollContext.createTextFunction(true);
 		if (cookies.token === null ||  cookies.token === "") {
             console.log("ifget");
@@ -35,8 +36,9 @@ const GetPoll = (props) => {
 						// eslint-disable-next-line
 						const timer = setTimeout(() => {
 							setAlert("");
-							//	history.push("/");
-						}, 2000);
+								history.push("/");
+                        }, 2000);
+                        setloader(false);
 					} else {
 						setPoll(res.data);
 						if (res.data.radio === "#3") {
