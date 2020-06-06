@@ -18,7 +18,7 @@ const GetPoll = (props) => {
         setloader(true)
         pollContext.createTextFunction(true);
 		if (cookies.token === "") {
-			history.push("/");
+			history.push("/login");
 		}
 
 		pollContext.getOnePoll(cookies.token, props.match.params.id).then((res) => {
