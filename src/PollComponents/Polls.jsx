@@ -10,7 +10,7 @@ const Polls = () => {
 	const { allPolls } = pollContext;
 	const history = useHistory();
 	// eslint-disable-next-line
-	const [cookies, setCookie] = useCookies("");
+	const [cookies, setCookie] = useCookies(['token']);
 	const [loader, setloader] = useState(false);
 
 	useEffect(() => {

@@ -8,7 +8,7 @@ const LoginUser = () => {
 	const userContext = useContext(UserContext);
 	const [userState, setUserState] = useState("");
 	// eslint-disable-next-line
-	const [cookies, setCookie] = useCookies("");
+	const [cookies, setCookie] = useCookies(['token']);
 	const history = useHistory();
 	const [alert, setAlert] = useState("");
 	const [loader, setloader] = useState(false);

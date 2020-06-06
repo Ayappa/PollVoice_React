@@ -2,7 +2,7 @@ import React from "react";
 import { useCookies } from "react-cookie";
 
 const LogoutUser = () => {
-	const [cookies, setCookie] = useCookies("");
+	const [cookies, setCookie] = useCookies(['token']);
 	console.log(cookies);
 	setCookie("token","");
 	return (

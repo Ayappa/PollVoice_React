@@ -8,7 +8,7 @@ const AnsweredPolls = () => {
 	const pollContext = useContext(PollContext);
 	const { answeredPoll } = pollContext;
 	// eslint-disable-next-line
-	const [cookies, setCookie] = useCookies("");
+	const [cookies, setCookie] = useCookies(['token']);
 	const history = useHistory();
 	const [loader, setloader] = useState(false);
 

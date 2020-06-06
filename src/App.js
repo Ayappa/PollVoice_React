@@ -17,7 +17,7 @@ import { CookiesProvider } from 'react-cookie';
 import RegisterRedirect from "./Login/RegisteredRedirect"
 import ForgotPassword from "./Login/ForgotPassword"
 import RedirectForgetPassword from "./Login/RedirectForgetPassword"
-const App = () => {
+const App = (prop) => {
 	return (
     <CookiesProvider>
 		<PollState>

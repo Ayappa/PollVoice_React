@@ -6,20 +6,15 @@ const Poll = (poll) => {
 	const pollContext = useContext(PollContext);
 
 	// eslint-disable-next-line
-	const [cookies, setCookie] = useCookies("");
+	const [cookies, setCookie] = useCookies(['token']);
 	const [total, setTotal] = useState(poll.poll.yes + poll.poll.no);
 	const [alert, setAlert] = useState("");
 	const [deleteAlert, setDeleteAlert] = useState("");
 
 	const greenSubmit = () => {
-		pollContext
-			.AnswerPoll(cookies.token, 1, poll.poll.pid)
-			.then((res) => {
-				update(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+		pollContext.AnswerPoll(cookies.token, 1, poll.poll.pid).then((res) => {
+			update(res.data);
+		}).catch(err=>{console.log(err)});
 	};
 	const redSubmit = () => {
 		pollContext.AnswerPoll(cookies.token, -1, poll.poll.pid).then((res) => {
@@ -82,7 +77,7 @@ const Poll = (poll) => {
 					</div>
 				)}
 				<div className='card-header '>
-					{poll.myPoll === 1 && (
+					{(poll.myPoll === 1 ) && (
 						<button
 							type='button'
 							onClick={() => {
@@ -167,8 +162,8 @@ const Poll = (poll) => {
 							<p>
 								share the link with friends :
 								<Link to={`/postQuestion/${poll.poll.pid}/getOne`}>
-									https://pollvoicefrontend.herokuapp.com/postQuestion/
-									{poll.poll.pid}/getOne
+								https://pollvoicefrontend.herokuapp.com/postQuestion/{poll.poll.pid}/getOne
+									{/* http://localhost:3000/postQuestion/{poll.poll.pid}/getOne */}
 								</Link>
 							</p>
 						</div>
