@@ -1,9 +1,9 @@
 import axios from "axios";
-
+const url="https://pollvoiceservice.herokuapp.com";
 class Request {
 	///registerUser
 	async registerUser({ firstName, lastName, email, password }) {
-		return await axios.post("http://localhost:8080/registerUser", {
+		return await axios.post(url+"/registerUser", {
 			firstName,
 			lastName,
 			email,
@@ -13,7 +13,7 @@ class Request {
 
 	async loginUser({ email, password }) {
 		//console.log("h="+email+password);
-		return await axios.post("http://localhost:8080/loginUser", {
+		return await axios.post(url+"/loginUser", {
 			email,
 			password,
 		});
@@ -24,7 +24,7 @@ class Request {
 		token
 	) {
 		return await axios.post(
-			"http://localhost:8080/postQuestion",
+			url+"/postQuestion",
 			{
 				question,
 				yes: 0,
@@ -44,7 +44,7 @@ class Request {
 
 	async getAllPoll(token) {
 		return await axios.get(
-			"http://localhost:8080/getAll",
+			url+"/getAll",
 
 			{
 				headers: {
@@ -57,7 +57,7 @@ class Request {
 
 	async AnswerPoll(token, val, pid) {
 		return await axios.post(
-			"http://localhost:8080/postQuestion/updateYes",
+			url+"/postQuestion/updateYes",
 			{
 				questionId: pid,
 				response: val,
@@ -72,7 +72,7 @@ class Request {
 
 	async getAnsweredPoll(token) {
 		return await axios.get(
-			"http://localhost:8080/answeredQuestion/getAll",
+			url+"/answeredQuestion/getAll",
 
 			{
 				headers: {
@@ -83,7 +83,7 @@ class Request {
 	}
 	async getCreatedPoll(token) {
 		return await axios.get(
-			"http://localhost:8080/createdQuestion/getAll",
+			url+"/createdQuestion/getAll",
 
 			{
 				headers: {
@@ -94,7 +94,7 @@ class Request {
 	}
 	async getOnePoll(token, pId) {
 		return await axios.get(
-			`http://localhost:8080/postQuestion/${pId}/getOne`,
+			url+`/postQuestion/${pId}/getOne`,
 
 			{
 				headers: {
@@ -108,7 +108,7 @@ class Request {
 		console.log(token + " " + pid.toString());
 
 		return await axios.post(
-			"http://localhost:8080/postQuestion/delete",
+			url+"/postQuestion/delete",
 			{},
 
 			{
@@ -124,7 +124,7 @@ class Request {
 		//console.log(token + " " + pid.toString());
 
 		return await axios.post(
-			"http://localhost:8080/updateSecret",
+			url+"/updateSecret",
 			{},
 
 			{
@@ -141,7 +141,7 @@ class Request {
 		//console.log(token + " " + pid.toString());
 
 		return await axios.post(
-			"http://localhost:8080/answered/delete",
+			url+"/answered/delete",
 			{},
 
 			{
@@ -156,14 +156,14 @@ class Request {
 	async sendMail(email) {
 		//console.log(token + " " + pid.toString());
 
-		return await axios.post("http://localhost:8080/updatePasswordMail", {
+		return await axios.post(url+"/updatePasswordMail", {
 			email,
 		});
 	}
 	async updatePassword(token, password) {
 		//console.log(token + " " + pid.toString());
 		return await axios.post(
-			"http://localhost:8080/updatePassword",
+			url+"/updatePassword",
 			{
 				password,
 			},
