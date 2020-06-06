@@ -1,6 +1,6 @@
 import axios from "axios";
-//const url="https://pollvoiceservice.herokuapp.com";
-const url = "http://localhost:8080";
+const url="https://pollvoiceservice.herokuapp.com";
+//const url = "http://localhost:8080";
 
 class Request {
 	///registerUser
