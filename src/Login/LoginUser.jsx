@@ -23,6 +23,8 @@ const LoginUser = () => {
 	};
 
 	useEffect(() => {
+		console.log("login")
+		console.log(cookies.token)
 		if (cookies.token !== "") {
 			history.push("/");
 		}
