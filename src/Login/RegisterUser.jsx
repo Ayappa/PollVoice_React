@@ -7,7 +7,7 @@ const RegisterUser = () => {
 	const userContext = useContext(UserContext);
 	const [userRegisterState, setUserRegisterState] = useState("");
 	// eslint-disable-next-line
-	const [cookies, setCookie] = useCookies(['token']);
+	const [cookies, setCookie] = useCookies("[token]");
 	const history = useHistory();
 	const [alert, setAlert] = useState("");
 	const [loader, setloader] = useState(false);
@@ -88,6 +88,7 @@ const RegisterUser = () => {
 								onChange={onChange}
 								required
 							></input>
+							
 						</div>
 						<div className='form-group col-md-6'>
 							<label>
@@ -102,6 +103,7 @@ const RegisterUser = () => {
 								onChange={onChange}
 								required
 							></input>
+							
 						</div>
 						<div className='form-group col-md-12'>
 							<label>
@@ -116,6 +118,7 @@ const RegisterUser = () => {
 								onChange={onChange}
 								required
 							></input>
+							
 						</div>
 						<div className='form-group col-md-6'>
 							<label>
@@ -158,11 +161,7 @@ const RegisterUser = () => {
 							{userRegisterState.password !== null &&
 								userRegisterState.password ===
 									userRegisterState.conformPasswword && (
-									<button
-										disabled={loader}
-										type='submit'
-										className='btn btn-primary'
-									>
+									<button disabled={loader} type='submit' className='btn btn-primary'>
 										<h5 className='font-weight-bold '>Sign Up</h5>
 									</button>
 								)}

@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const RegisterRedirect = (props) => {
 	const userContext = useContext(UserContext);
 	// eslint-disable-next-line
-	const [cookies, setCookie] = useCookies("");
+	const [cookies, setCookie] = useCookies("[token]");
 	const history = useHistory();
 
 	useEffect(() => {		

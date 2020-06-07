@@ -30,7 +30,7 @@ const ForgotPassword = () => {
 						setStatus("");
 					}, 2000);
 				} else {
-                    setloader(false);
+                    	setloader(false);
 					setAlert("User dont exist !!!");
 					// eslint-disable-next-line
 					const timer = setTimeout(() => {

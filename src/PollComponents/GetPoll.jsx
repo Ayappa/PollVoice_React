@@ -15,6 +15,11 @@ const GetPoll = (props) => {
 	const [loader, setloader] = useState(false);
 
 	useEffect(() => {
+      //  window.location.reload(); 
+        stateLoader();
+    }, []);
+    
+     const stateLoader=()=>{
         setloader(true);
         console.log("get");
         console.log(cookies);
@@ -50,7 +55,7 @@ const GetPoll = (props) => {
 					}
 				});
 		}
-	}, []);
+    }
 
 	return (
 		<div style={{ paddingBottom: "35px" }}>
