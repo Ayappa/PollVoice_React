@@ -1,4 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# PollVoice App- to know what other think about your opinion or poll your opinion 
+## with react Hooks , react useState and ect.
+
+
+# login
+### with form validation
+![login](https://user-images.githubusercontent.com/22851920/83958002-dd254c00-a83a-11ea-9668-b63320fda5df.PNG)
+
+# Register with email link 
+![linkandpassword](https://user-images.githubusercontent.com/22851920/83958001-dd254c00-a83a-11ea-85c3-1cf768204cbe.PNG)
+
+# Get All the polls posted around the world that are made public
+![allpolls](https://user-images.githubusercontent.com/22851920/83958004-ddbde280-a83a-11ea-9d4a-d6b2c6b66a84.PNG)
+![validation](https://user-images.githubusercontent.com/22851920/83958003-dd254c00-a83a-11ea-8952-7a8dae304804.PNG)
+
+# Create poll with visibility public , private or private with passcode
+![createPoll](https://user-images.githubusercontent.com/22851920/83958005-ddbde280-a83a-11ea-8136-e1d4fcabb771.PNG)
+
+# Register user with email verification
+![emailRegistration](https://user-images.githubusercontent.com/22851920/83958006-ddbde280-a83a-11ea-87bd-8b8a8e904890.PNG)
+
+# Forgot Passcode with email verification link
+![forgetpasswordEmailValidation](https://user-images.githubusercontent.com/22851920/83958007-de567900-a83a-11ea-8261-838b3ec47215.PNG)
+
+## back end - https://github.com/Ayappa/PollVoice_SpringBoot_BackEnd
 
 ## Available Scripts
 
